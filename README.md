@@ -2,6 +2,22 @@
 Freesapce segmantation with pytorch 
 The aim of this project is to provide scene understanding by labeling each pixel of an image as being road or not road . This will enable a self-driving car to determine the free navigable space on the road. It requires knowledge of FCNs (Fully Convolutional Networks) to create a semantic segmentation model that classifies each pixel.
 -------------------------------------------------------------------------------------------------------------------------------------------
+<hr>
+<h1> JsonTOMask</h1>
+Jsontomask unmasks the path on a blank image based on external points found in json files.<br>
+<code>    
+           for obj in json_dict["objects"]:
+            if obj['classTitle']=='Freespace':
+              mask = cv2.fillPoly(mask, np.array([obj['points']['exterior']]), color=1)
+</code>
+<br>
+<h3><a href="https://github.com/mfurkanszgn/Freespace-segmantation-Ford-staj/blob/main/FreeSpace%20Segmentation/intern-p1/src/json2mask.py">jsontomask</a> </h3>
+
+<h1> MaskOnImage</h1>
+
+maskonimage pastes masks created from json onto normal images by changing their color.
+<h3><a href="https://github.com/mfurkanszgn/Freespace-segmantation-Ford-staj/blob/main/FreeSpace%20Segmentation/intern-p1/src/mask_on_image.py">MaskOnImage</a> </h3>
+
 NORMAL--------------------------------------------------------MASKED-------------------------------------PREDICT
 
 ![Fotoram io (1)](https://user-images.githubusercontent.com/57313643/137955239-f63bc2a4-81a1-4520-a534-e43428b34407.jpg)
